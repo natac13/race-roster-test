@@ -1,0 +1,10 @@
+@import 'compass';
+
+$base-font-size: 18px;
+$base-line-height: 32px;
+@include establish-baseline;
+
+$primary-color: #23B5D3;
+$secondary-color: #8BB174;
+$extreme-color: #E57A44;
+$backing-color: #262322;
