@@ -29,4 +29,7 @@ main {
             @include adjust-font-size-to(15px);
         }
     }
+    .error {
+        color: red;
+    }
 }

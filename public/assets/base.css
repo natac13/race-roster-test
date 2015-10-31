@@ -101,6 +101,9 @@ main form .btn {
   font-size: 0.9375em;
   line-height: 1.86667em;
 }
+main .error {
+  color: red;
+}
 
 nav {
   background: white;
