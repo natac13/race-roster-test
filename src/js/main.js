@@ -1,5 +1,6 @@
-import countryTest from './checkCountry';
+import countryTest   from './checkCountry';
 import validateRules from './validateRules';
+import scroll        from './scroll';
 
 $(document).ready(function() {
     let $contactForm = $('#contact-info'),
@@ -11,20 +12,30 @@ $(document).ready(function() {
         $state = $contactForm.find('#state');
 
 
+    /*** smooth scrolling ***/
+    $('a').click(function() {
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 1000);
+        return false;
+    });
+
+    /*** update form based on country selection ***/
     $country.on('change', function() {
         countryTest($contactForm, $(this))
     });
 
-    /*** Validations ***/
+    /*** New Validations ***/
     $.validator.addMethod('regex', function(value, element, regex) {
         let re = new RegExp(regex);
         return re.test(value);
     });
 
-    /*** Valid ***/
+    /*** Valid fields ***/
     $contactForm.validate(validateRules);
 
 
+    /*** form submission ***/
     $contactForm.on('submit', function(event) {
         event.preventDefault();
         $.ajax({
@@ -43,3 +54,4 @@ $(document).ready(function() {
 
     })
 });
+

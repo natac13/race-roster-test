@@ -9,13 +9,16 @@ body {
 }
 
 .main-header {
-  position: relative;
-  left: 0;
-  right: 0;
+  border-radius: 2em;
   background: linear-gradient(to bottom, #303239, #6a81a2);
   height: 25em;
   padding: 2em;
   margin: 0 0 3em 0;
+}
+@media only screen and (max-width: 699px) {
+  .main-header {
+    height: 35em;
+  }
 }
 .main-header h1 {
   font-size: 5em;
@@ -32,18 +35,23 @@ body {
 }
 
 .extras {
-  margin: 0 auto;
+  margin: 3em auto;
   width: 90%;
 }
 .extras .plugs {
   font-size: 2.25em;
   line-height: 1.55556em;
-  height: 18em;
+  display: inline-block;
+  height: 20em;
   margin-top: 2em;
   padding: 2em 3em;
-  position: relative;
   overflow: hidden;
   text-align: center;
+}
+@media only screen and (max-width: 1199px) {
+  .extras .plugs {
+    height: 15em;
+  }
 }
 .extras .plugs p {
   margin-top: 0.77778em;
@@ -51,6 +59,7 @@ body {
 .extras .plugs i {
   font-size: 2.5em;
   line-height: 1.4em;
+  box-shadow: 0 0 25px #333;
   color: #454851;
   background: rgba(255, 206, 186, 0.8);
   border-radius: 100%;
@@ -59,6 +68,9 @@ body {
   padding-top: 0.4em;
 }
 
+main {
+  margin: auto 1em;
+}
 main > div {
   background: #FFCEBA;
   border-radius: 1em;
@@ -88,4 +100,53 @@ main form .form-control {
 main form .btn {
   font-size: 0.9375em;
   line-height: 1.86667em;
+}
+
+nav {
+  background: white;
+  border-radius: 1em;
+}
+nav li {
+  font-size: 2.0625em;
+  line-height: 1.69697em;
+  color: #457ac7;
+  border-width: 0.09091em;
+  border-style: solid;
+  padding: 0.33333em;
+  border-radius: 0.75em;
+  margin-top: 0.5em;
+  transition: box-shadow 0.5s ease-in;
+}
+nav li:hover {
+  box-shadow: 10px 10px 70px #333 inset, -10px -10px 70px #333 inset;
+}
+nav a {
+  transition: font-weight 0.3s ease-in, text-shadow 0.5s ease-in;
+}
+nav a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 2px 3px #3b3d45;
+}
+
+footer {
+  color: #81F4E1;
+  font-size: 1.875em;
+  line-height: 1.86667em;
+  height: 20em;
+  padding-top: 2em;
+  background: #454851;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+footer a {
+  color: #2074ec;
+  transition: all 0.5s ease-in;
+  font-weight: bold;
+}
+footer a:hover {
+  color: #6ea5f3;
+  text-decoration: none;
 }

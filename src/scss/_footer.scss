@@ -1,0 +1,22 @@
+footer{
+    color: $secondary-color;
+    @include adjust-font-size-to(30px);
+    height: 20em;
+    padding-top: 2em;
+    background: $backing-color;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+    a {
+        color: scale-saturation($primary-color, 80%);
+        transition: all 0.5s ease-in;
+        font-weight: bold;
+
+        &:hover {
+            color: tint(scale-saturation($primary-color, 80%), 35%);
+            text-decoration: none;
+        }
+    }
+}

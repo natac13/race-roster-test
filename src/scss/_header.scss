@@ -1,11 +1,13 @@
 .main-header {
-    position: relative;
-    left: 0;
-    right: 0;
+    border-radius: 2em;
     background: linear-gradient(to bottom, shade($backing-color, 30%), $primary-color);
     height: 25em;
     padding: 2em;
     margin: 0 0 3em 0;
+
+    @media only screen and (max-width: 699px) {
+        height: 35em;
+    }
 
     h1 {
         @include adjust-font-size-to(80px);

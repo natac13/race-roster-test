@@ -18,7 +18,7 @@ export default function($form, $el) {
             $form.find('#zipWrapper').hide('slide', 600, function() {
                 $(this).find('#zip-code, #state').prop('disabled', true);
                 $form.find('#postalWrapper').show('size', 600, function() {
-                    $(this).find('#postal-code, #province').prop('disabled', true);
+                    $(this).find('#postal-code, #province').prop('disabled', false);
                 });
             });
 

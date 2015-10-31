@@ -1,14 +1,18 @@
 .extras {
-    margin: 0 auto;
+    margin: 3em auto;
     width: 90%;
     .plugs {
         @include adjust-font-size-to(36px);
-        height: 18em;
+        display: inline-block;
+        height: 20em;
         margin-top: 2em;
         padding: 2em 3em;
-        position: relative;
         overflow: hidden;
         text-align: center;
+
+        @media only screen and (max-width: 1199px) {
+            height: 15em;
+        }
 
         p {
             @include leader(1, 36px);
@@ -16,6 +20,7 @@
 
         i {
             @include adjust-font-size-to(40px);
+            box-shadow: 0 0 25px #333;
             color: $backing-color;
             background: rgba($extreme-color, 0.8);
             border-radius: 100%;

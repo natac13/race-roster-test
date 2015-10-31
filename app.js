@@ -13,6 +13,7 @@ app.get('/', function(req, res) {
 });
 
 app.post('/addUser', function(req, res) {
+    /*** Getting the data which could be added to mongodb ***/
     var name = req.body.name,
         email = req.body.email,
         country = req.body.country,
@@ -33,12 +34,12 @@ app.post('/addUser', function(req, res) {
         postalCode = req.body.postalCode;
     }
 
-    console.log(name);
-    console.log(email);
-    console.log(country);
-    console.log(address);
-    console.log(postalCode);
-    console.log(province);
+    // console.log(name);
+    // console.log(email);
+    // console.log(country);
+    // console.log(address);
+    // console.log(postalCode);
+    // console.log(province);
     res.redirect('/');
 });
 
