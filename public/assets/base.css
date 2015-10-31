@@ -27,11 +27,23 @@ body {
   color: #81F4E1;
   text-shadow: 0 5px 5px #454851;
 }
+@media only screen and (max-width: 699px) {
+  .main-header h1 {
+    font-size: 3.125em;
+    line-height: 1.12em;
+  }
+}
 .main-header h3 {
   font-size: 2.5em;
   line-height: 1.4em;
   color: #7ef7e3;
   text-shadow: 5px 0 5px #454851;
+}
+@media only screen and (max-width: 699px) {
+  .main-header h3 {
+    font-size: 1.75em;
+    line-height: 2em;
+  }
 }
 
 .extras {
@@ -47,6 +59,12 @@ body {
   padding: 2em 3em;
   overflow: hidden;
   text-align: center;
+}
+@media only screen and (max-width: 699px) {
+  .extras .plugs {
+    font-size: 1.75em;
+    line-height: 2em;
+  }
 }
 @media only screen and (max-width: 1199px) {
   .extras .plugs {
@@ -85,12 +103,24 @@ main legend {
   border: 0;
   margin-bottom: 0;
 }
+@media only screen and (max-width: 699px) {
+  main legend {
+    font-size: 2.1875em;
+    line-height: 1.6em;
+  }
+}
 main form {
   font-size: 1.75em;
   line-height: 2em;
   padding: 1em;
   letter-spacing: 0.1em;
   color: #333;
+}
+@media only screen and (max-width: 699px) {
+  main form {
+    font-size: 1.25em;
+    line-height: 1.4em;
+  }
 }
 main form .form-control {
   font-size: 0.9375em;
@@ -143,6 +173,19 @@ footer {
   width: 100%;
   left: 0;
   right: 0;
+}
+@media only screen and (max-width: 699px) {
+  footer {
+    font-size: 1.4375em;
+    line-height: 1.21739em;
+  }
+}
+footer h2 {
+  font-size: 1.5625em;
+  line-height: 2.24em;
+}
+footer p {
+  margin-top: 1.21739em;
 }
 footer a {
   color: #2074ec;

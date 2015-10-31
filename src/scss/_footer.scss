@@ -9,6 +9,18 @@ footer{
     left: 0;
     right: 0;
 
+    @media only screen and (max-width: 699px) {
+        @include adjust-font-size-to(23px);
+    }
+
+    h2 {
+        @include adjust-font-size-to(25px);
+    }
+
+    p {
+        @include leader(1, 23px);
+    }
+
     a {
         color: scale-saturation($primary-color, 80%);
         transition: all 0.5s ease-in;

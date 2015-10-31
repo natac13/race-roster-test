@@ -13,6 +13,10 @@ main {
         color: $primary-color;
         border: 0;
         margin-bottom: 0;
+
+        @media only screen and (max-width: 699px) {
+            @include adjust-font-size-to(35px);
+        }
     }
     form {
         @include adjust-font-size-to(28px);
@@ -20,9 +24,14 @@ main {
         letter-spacing: 0.1em;
         color: #333;
 
+        @media only screen and (max-width: 699px) {
+            @include adjust-font-size-to(20px);
+        }
+
         .form-control {
             @include adjust-font-size-to(15px);
             height: 2em;
+
         }
 
         .btn {
