@@ -1,0 +1,26 @@
+.main-header {
+    position: relative;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to bottom, shade($backing-color, 30%), $primary-color);
+    height: 25em;
+    padding: 2em;
+    margin: 0 0 3em 0;
+
+    h1 {
+        @include adjust-font-size-to(80px);
+        font-weight: bold;
+        color: $secondary-color;
+        text-shadow: 0 5px 5px $backing-color;
+    }
+
+    h3 {
+        @include adjust-font-size-to(40px);
+        color: scale-saturation($secondary-color, 23%);
+        text-shadow: 5px 0 5px $backing-color;
+
+    }
+
+
+
+}

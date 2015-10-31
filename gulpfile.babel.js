@@ -84,7 +84,7 @@ gulp.task('delete', function() {
     });
 
 gulp.task('default', ['delete', 'css', 'scripts'], function () {
-    livereload.listen({basepath: 'public/'});
+    livereload.listen();
     gulp.watch(paths.alljs, ['scripts']);
     // gulp.watch(paths.tests, ['spec']);
     gulp.watch(paths.allscss, ['css']);

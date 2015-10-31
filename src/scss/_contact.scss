@@ -1,0 +1,32 @@
+main {
+
+    & > div {
+        background: $extreme-color;
+        border-radius: 1em;
+    }
+
+    legend {
+        @include adjust-font-size-to(42px);
+        letter-spacing: 0.04em;
+        text-align: center;
+        font-weight: bold;
+        color: $primary-color;
+        border: 0;
+        margin-bottom: 0;
+    }
+    form {
+        @include adjust-font-size-to(28px);
+        padding: 1em;
+        letter-spacing: 0.1em;
+        color: #333;
+
+        .form-control {
+            @include adjust-font-size-to(15px);
+            height: 2em;
+        }
+
+        .btn {
+            @include adjust-font-size-to(15px);
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import countryTest from './checkCountry';
+import validateRules from './validateRules';
 
 $(document).ready(function() {
     let $contactForm = $('#contact-info'),
@@ -21,41 +22,24 @@ $(document).ready(function() {
     });
 
     /*** Valid ***/
-    $contactForm.validate({
-        rules: {
-            "name": {
-                required: true
+    $contactForm.validate(validateRules);
+
+
+    $contactForm.on('submit', function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/addUser',
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function(data) {
+                console.log('got the data into express!');
+                $contactForm.trigger('reset');
             },
-            "email": {
-                required: true,
-                email: true
-            },
-            "address": {
-                regex: /^(:?\d{2,}-?)?\d{2,}\s[a-z]+\s[a-z]+\.?$/i
-            },
-            "postal-code": {
-                regex: /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i
-            },
-            "zip-code": {
-                regex: /^\d{5}$/
+            error: function() {
+                console.log('still got an error');
             }
-        },
-        messages: {
-            "name": {
-                required: "Please enter your name, as it is required to submit."
-            },
-            "email": {
-                required: "Please enter a valid email address; also required for submission."
-            },
-            "address": {
-                regex: "Address should have number first then street name. If apartment then add unit number to beginning of street number followed by '-' with no single quotes."
-            },
-            "postal-code": {
-                regex: "Need a valid Postal Code eh!"
-            },
-            "zip-code": {
-                regex: "Going to need a valid Zip code."
-            }
-        }
-    });
+
+        });
+
+    })
 });

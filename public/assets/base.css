@@ -1,4 +1,91 @@
 html {
-  font-size: 112.5%;
-  line-height: 1.77778em;
+  font-size: 100%;
+  line-height: 1.75em;
+}
+
+body {
+  font-family: 'Arvo', serif;
+  background: rgba(69, 72, 81, 0.4);
+}
+
+.main-header {
+  position: relative;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, #303239, #6a81a2);
+  height: 25em;
+  padding: 2em;
+  margin: 0 0 3em 0;
+}
+.main-header h1 {
+  font-size: 5em;
+  line-height: 1.05em;
+  font-weight: bold;
+  color: #81F4E1;
+  text-shadow: 0 5px 5px #454851;
+}
+.main-header h3 {
+  font-size: 2.5em;
+  line-height: 1.4em;
+  color: #7ef7e3;
+  text-shadow: 5px 0 5px #454851;
+}
+
+.extras {
+  margin: 0 auto;
+  width: 90%;
+}
+.extras .plugs {
+  font-size: 2.25em;
+  line-height: 1.55556em;
+  height: 18em;
+  margin-top: 2em;
+  padding: 2em 3em;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.extras .plugs p {
+  margin-top: 0.77778em;
+}
+.extras .plugs i {
+  font-size: 2.5em;
+  line-height: 1.4em;
+  color: #454851;
+  background: rgba(255, 206, 186, 0.8);
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  padding-top: 0.4em;
+}
+
+main > div {
+  background: #FFCEBA;
+  border-radius: 1em;
+}
+main legend {
+  font-size: 2.625em;
+  line-height: 1.33333em;
+  letter-spacing: 0.04em;
+  text-align: center;
+  font-weight: bold;
+  color: #6A81A2;
+  border: 0;
+  margin-bottom: 0;
+}
+main form {
+  font-size: 1.75em;
+  line-height: 2em;
+  padding: 1em;
+  letter-spacing: 0.1em;
+  color: #333;
+}
+main form .form-control {
+  font-size: 0.9375em;
+  line-height: 1.86667em;
+  height: 2em;
+}
+main form .btn {
+  font-size: 0.9375em;
+  line-height: 1.86667em;
 }
