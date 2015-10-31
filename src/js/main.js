@@ -32,25 +32,64 @@ $(document).ready(function() {
     });
 
     /*** Valid fields ***/
-    $contactForm.validate(validateRules);
+    $contactForm.validate({
+        rules: {
+            "name": {
+                required: true
+            },
+            "email": {
+                required: true,
+                email: true
+            },
+            "address": {
+                regex: /^(:?\d{2,}-?)?\d{2,}\s[a-z]+\s[a-z]+\.?$/i
+            },
+            "postalCode": {
+                regex: /^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVWXYZ]( )?\d[ABCEGHJKLMNPRSTVWXYZ]\d$/i
+            },
+            "zipCode": {
+                regex: /^\d{5}$/
+            }
+        },
+        messages: {
+            "name": {
+                required: "Please enter your name, as it is required to submit."
+            },
+            "email": {
+                required: "Please enter a valid email address; also required for submission."
+            },
+            "address": {
+                regex: "Address should have number first then street name. If apartment then add unit number to beginning of street number followed by '-' with no single quotes."
+            },
+            "postalCode": {
+                regex: "Need a valid Postal Code eh!"
+            },
+            "zipCode": {
+                regex: "Going to need a valid Zip code."
+            }
+        },
+        submitHandler: function(form) {
+            $.ajax({
+                url: '/addUser',
+                type: 'POST',
+                data: $(form).serialize(),
+                success: function(data) {
+                    console.log('got the data into express!');
+                    $contactForm.trigger('reset');
+                },
+                error: function() {
+                    console.log('still got an error');
+                }
+
+            })
+        }
+    });
 
 
     /*** form submission ***/
     $contactForm.on('submit', function(event) {
         event.preventDefault();
-        $.ajax({
-            url: '/addUser',
-            type: 'POST',
-            data: $(this).serialize(),
-            success: function(data) {
-                console.log('got the data into express!');
-                $contactForm.trigger('reset');
-            },
-            error: function() {
-                console.log('still got an error');
-            }
-
-        });
+        ;
 
     })
 });

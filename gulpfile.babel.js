@@ -24,10 +24,6 @@ import prefixer     from 'gulp-autoprefixer';
 /*** Server ***/
 import livereload   from 'gulp-livereload';
 
-/*** Jasmine Testing ***/
-import jasmine      from 'gulp-jasmine';
-import reporters    from 'jasmine-reporters';
-
 const paths = {
     mainjs: 'src/js/main.js',
     alljs: 'src/js/*.js',
