@@ -1,7 +1,7 @@
 footer{
     color: $secondary-color;
     @include adjust-font-size-to(30px);
-    height: 20em;
+    height: 15em;
     padding-top: 2em;
     background: $backing-color;
     position: absolute;

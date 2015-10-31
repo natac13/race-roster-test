@@ -1,5 +1,4 @@
 import countryTest   from './checkCountry';
-import validateRules from './validateRules';
 import scroll        from './scroll';
 
 $(document).ready(function() {
@@ -31,7 +30,7 @@ $(document).ready(function() {
         return re.test(value);
     });
 
-    /*** Valid fields ***/
+    /*** Valid fields and submit ***/
     $contactForm.validate({
         rules: {
             "name": {
@@ -81,16 +80,10 @@ $(document).ready(function() {
                     console.log('still got an error');
                 }
 
-            })
+            });
         }
     });
 
 
-    /*** form submission ***/
-    $contactForm.on('submit', function(event) {
-        event.preventDefault();
-        ;
-
-    })
 });
 
